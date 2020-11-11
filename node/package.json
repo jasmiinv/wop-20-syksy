@@ -1,0 +1,14 @@
+{
+  "name": "harj1",
+  "version": "1.0.0",
+  "description": "harjoitellaan vaan",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon script.js"
+  },
+  "author": "Jade",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
