@@ -1,18 +1,20 @@
 'use strict';
-const catModel = require('../models/catModel');
+const userModel = require('../models/userModel');
 
-const cats = catModel.cats;
+const users = userModel.users;
 
-const cat_list_get = (req, res) => {
-  res.json(cats);
+const user_list_get = (req, res) => {
+    const newUsers = users.map(usr=> delete usr.password);
+  res.json(users);
 };
 
-const cat_get = (req, res) => {
+const user_get = (req, res) => {
 const id = req.params.id;
-const cat = cats.filter(kissa => kissa.id === id).pop();
-    res.json(cat);
+const user = users.filter(usr => usr.id === id).pop();
+delete user.password;
+    res.json(user);
 };
 module.exports = {
-  cat_list_get,
-  cat_get,
+  user_list_get,
+  user_get,
 };
